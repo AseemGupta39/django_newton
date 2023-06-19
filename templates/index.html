@@ -1,45 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <style>
-        table, th , td
-        { border: 2px solid black;}
+        table,
+        th,
+        td {
+            border: 2px solid black;
+        }
     </style>
 </head>
+
 <body>
     <table class="table">
-     
-          <tr>
+
+        <tr>
             <th scope="col">S no</th>
             <th scope="col">Name</th>
             <th scope="col">Age</th>
             <th scope="col">Can Vote</th>
-          </tr>
-          {% for people in p%}
-          <tr>
+        </tr>
+        {% for people in p%}
+        <tr>
             <th scope="row">{{forloop.counter}}</th>
             <td>{{people.name}}</td>
             <td>{{people.age}}</td>
-            <td {%if people.age < 18 %} style="background:red" {%else%} style="background:lightgreen" {% endif %} >
-                {% if people.age >= 18 %} 
+            <td {%if people.age < 18 %} style="background:red" {%else%} style="background:lightgreen" {% endif %}>
+                {% if people.age >= 18 %}
                 yes
                 {% else %}
                 no
                 {% endif %}
             </td>
-          </tr>
-         {% endfor %}
-      </table>
-      {% comment %} {{p}} {% endcomment %}
+        </tr>
+        {% endfor %}
+    </table>
+    {% comment %} {{p}} {% endcomment %}
     <!-- <a href="">hello to home</a> -->
     <!-- <script>
         console.log("hello django")
         </script> -->
-        <!-- {{text|truncatechars:80}} -->
-        {{text}}
+    <!-- {{text|truncatechars:80}} -->
+    {{text}}
+
+    <p style = "text-align:center">
+        {% comment %} {{veg[0]}} {% endcomment %}
+    {% if 'cucumber' in veg %} yes  {%else%} no its not in {{veg}} {%endif%}
+    </p>
 </body>
+
 </html>
