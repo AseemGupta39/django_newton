@@ -11,6 +11,12 @@ def home(request):
     # return HttpResponse("<h1>bhai tu sahi jagah aya hai</h1>")
     # return HttpResponse("""<h1 style = "text-align: center";>bhai tu sahi jagah aya hai</h1>""")
 
+def about(request):
+    return render(request,'about.html')
+
+def contact(request):
+    return render(request,'contact.html')
+
 def success_page(request):
     # return render(request,'index.html')
     return HttpResponse("<h1>you landed on my land</h1>")
