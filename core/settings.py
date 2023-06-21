@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-External_Apps = ['home','accounts']
+External_Apps = ['home','accounts','vege']
 
 INSTALLED_APPS+=External_Apps
 
