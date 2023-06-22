@@ -1,6 +1,15 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,HttpResponse
 
 from .models import *
+
+def delete_receipe(request,id):
+     # if request.method == "POST":
+     queryset = Recepie.objects.get(id=id)
+     queryset.delete()
+     print(f"deleted {id}")
+     return redirect('/receipes/')
+
+     
 # Create your views here.
 def receipes(request):
      if request.method == "POST":
