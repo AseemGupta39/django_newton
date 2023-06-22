@@ -8,5 +8,8 @@ class Recepie(Model):
     receipe_description = TextField()
     receipe_image = ImageField(upload_to='receipe')
 
+    # def __str__(self) -> str:
+    #     return self.receipe_name
+
 
 
