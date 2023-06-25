@@ -1,6 +1,13 @@
 from django.shortcuts import render,redirect
 from .models import *
 
+
+def register(request):
+     return render(request,'register.html')
+
+def login_page(request):
+     return render(request,'login.html')
+
 def update_receipe(request,id):
      queryset = Recepie.objects.get(id=id)
      
@@ -39,7 +46,7 @@ def receipes(request):
           receipe_image = request.FILES.get('receipe_image')
           receipe_name = data.get("receipe_name")
           receipe_description = data.get("receipe_description")
-          print(receipe_name,receipe_description,receipe_image)
+          # print(receipe_name,receipe_description,receipe_image)
           Recepie.objects.create(receipe_name=receipe_name,
                                  receipe_description=receipe_description,
                                  receipe_image=receipe_image)
