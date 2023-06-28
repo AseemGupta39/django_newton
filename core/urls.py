@@ -27,11 +27,7 @@ urlpatterns = [
     path('success_page/',success_page,name='success_page'),
     path('contact/',contact,name='contact'),
     path('about/',about,name='about'),
-    path('receipes/',receipes,name='receipes'),
-    path('delete_receipe/<id>/',delete_receipe,name='delete_receipe'),
-    path('update_receipe/<id>/',update_receipe,name='update_receipe'),
-    path('login/',login_page,name='login_page'),
-    path('register/',register,name='register')
+    path('receipes/',receipes,name='receipes')
 ]
 
 # if settings.DEBUG:
