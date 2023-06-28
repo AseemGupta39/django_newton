@@ -23,8 +23,8 @@ def receipes(request):
                cv = Converter(pdf_file)
                cv.convert(docx_file)      # all pages by default
                cv.close()
-               context={'file': os.path.abspath(docx_file)}
-               print(f"downloadind {os.path.abspath(docx_file)}")
+               context={'f': docx_file,'d':docx_name}
+               print(f"downloadind {docx_file}")
                return render(request,'pd.html',context)
      
      queryset = pdf1.objects.all()
