@@ -9,6 +9,7 @@ class Recepie(Model):
     receipe_name = CharField(max_length=100)
     receipe_description = TextField()
     receipe_image = ImageField(upload_to='receipe')
+    receipe_view_count = IntegerField(default=1)
 
     # def __str__(self) -> str:
     #     return self.receipe_name

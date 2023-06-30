@@ -8,13 +8,21 @@
         {%csrf_token%}
         <h2 style="text-align: center;">Register</h2>
         <hr>
-        {% if messages %}
-        <div class="alert alert-primary" role="alert">
+        {% comment %} {% if messages %}
+         <div class="alert alert-primary" role="alert">
             {% for message in messages %}
             {{ message }}
             {% endfor %}
           </div>
-        {% endif %}
+        {% endif %} {% endcomment %}
+        {% if messages %}
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endif %}
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">First Name</label>
             <input type="text" class="form-control" required name="first_name" id="exampleInputEmail1" aria-describedby="emailHelp">
