@@ -30,7 +30,7 @@ def register(request):
           user.set_password(password)
           user.save()
           messages.success(request, "account registerd.")
-          return redirect("/register/")
+          return redirect("/login/")
 
      return render(request,'register.html')
 
