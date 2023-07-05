@@ -25,8 +25,12 @@ SECRET_KEY = 'django-insecure-g(us^ag=(-wi81bd3aej03qjc^^#da*q1-szp*^c&d1!3==+3+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+########
+# for replit #
+CSRF_TRUSTED_ORIGINS = ['https://djangonewton.aseemgupta3.repl.co']
+ALLOWED_HOSTS = ['*']
+X_FRAME_OPTIONS = '*'
+########
 
 # Application definition
 
