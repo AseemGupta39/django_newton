@@ -31,6 +31,14 @@ class StudentID(Model):
     def __str__(self):
         return self.student_id
     
+class Subject(Model):
+    subject_name = CharField(max_length=100)
+
+    def __str__(self) -> str:
+        return self.subject_name
+
+
+
 class Student(Model):
     department = ForeignKey(Department,related_name='depart',on_delete=CASCADE)
     student_id = OneToOneField(StudentID,related_name='studentid',on_delete=CASCADE)
@@ -45,3 +53,14 @@ class Student(Model):
     class Meta:
         ordering = ['student_name']
         verbose_name = 'student'
+
+class SubjectMarks(Model):
+    student = ForeignKey(Student,related_name='studentmarks',on_delete=CASCADE)
+    subject = ForeignKey(Subject,on_delete=CASCADE)
+    marks = IntegerField()
+
+    def __str__(self) -> str:
+        return f'{self.student.student_name}  {self.subject.subject_name}'
+
+    class Meta:
+        unique_together  = ['student','subject']
