@@ -33,7 +33,8 @@ urlpatterns = [
     path('login/',login_page,name='login_page'),
     path('register/',register,name='register'),
     path('logout/',logout_page,name='log_out'),
-    path('students/',get_students,name='get_students')
+    path('students/',get_students,name='get_students'),
+    path('see_marks/<student_id>/',see_marks,name="see_marks")
 ]
 
 # if settings.DEBUG:

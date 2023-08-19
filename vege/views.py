@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
-from django.db.models import Q
+from django.db.models import Q,Sum
 
 def register(request):
      if request.method == "POST":
@@ -139,5 +139,11 @@ def get_students(request):
      paginator = Paginator(queryset, 25)  # Show 25 contacts per page.
      page_number = request.GET.get("page",1)
      page_obj = paginator.get_page(page_number)
-     print(page_obj.object_list)
+     # print(page_obj.object_list)
      return render(request,'report//students.html',{'queryset':page_obj})
+
+def see_marks(request,student_id):
+     queryset = SubjectMarks.objects.filter(student__student_id__student_id = student_id)
+     total_marks = queryset.aggregate(total_marks = Sum('marks'))
+     # print(total_marks['total_marks'])
+     return render(request,'report//see_marks.html',{'queryset':queryset,'total_marks':total_marks['total_marks']})
