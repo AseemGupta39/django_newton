@@ -1,0 +1,7 @@
+.replit
+**/__pycache__/
+poetry.lock
+public/
+pyproject.toml
+replit.nix
+venv/

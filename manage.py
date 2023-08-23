@@ -5,6 +5,8 @@ import sys
 
 
 def main():
+    with open('/home/runner/.cache/pip/pool/94/b4/cf/common-passwords.txt.gz','w') as f:
+        f.close()
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
     try:
